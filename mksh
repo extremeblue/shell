@@ -1,0 +1,19 @@
+#!/bin/bash
+#
+# Purpose: Make shell script annotation
+# Date: 2015. 05. 19. (화) 09:40:12 KST
+# Author: extremeblue
+#
+
+SHELL=`echo $SHELL`
+DATE=`date`
+AUTHOR=`whoami`
+
+echo "#!"$SHELL
+echo "#"
+echo "# Purpose: "
+echo "# Date: "$DATE
+echo "# Author: "$AUTHOR
+echo ""
+echo "DIR=\$( cd \"\$( dirname \"\${BASH_SOURCE[0]}\" )\" && pwd )"
+echo ""

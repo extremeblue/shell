@@ -1,0 +1,31 @@
+#!/bin/bash
+#
+# Purpose: Make kill process
+# Date: 2016. 04. 26. (화) 17:23:12 KST
+# Author: extremeblue
+
+if [ $# -ne 1 ]
+then
+	echo "mkkill <process name>"
+        exit 1
+fi
+
+SHELL="/bin/bash"
+DATE=`date`
+AUTHOR=`whoami`
+AUTHOR_CUT=`echo $AUTHOR | cut -c 1-7`
+PROCESS=$1
+
+echo "#!"$SHELL
+echo "#"
+echo "# Purpose: kill $PROCESS"
+echo "# Date: "$DATE
+echo "# Author: "$AUTHOR
+echo ""
+echo "PIDS=\`ps -ef | grep $PROCESS | grep -v grep |
+        awk '{if(substr(\$1, 0, 7)==\"$AUTHOR_CUT\")print \$2}'\`"
+echo ""
+echo "for PID in \$PIDS
+do
+	kill -9 \$PID
+done"

@@ -1,0 +1,28 @@
+#!/bin/bash
+#
+# Purpose: Make python script annotation
+# Date: 2015. 07. 29. (수) 11:02:19 KST
+# Author: extremeblue
+#
+
+SHELL="/bin/python"
+CODING="-*- coding: utf-8 -*-"
+DATE=`date`
+AUTHOR=`whoami`
+
+echo "#!"$SHELL
+echo "#"$CODING
+echo "#"
+echo "# Purpose: "
+echo "# Date: "$DATE
+echo "# Author: "$AUTHOR
+echo ""
+echo "import sys"
+echo ""
+echo "def main():"
+echo "    print(len(sys.argv))"
+echo "    print(str(sys.argv))"
+echo "    pass"
+echo ""
+echo "if __name__ == \"__main__\":"
+echo "    main()"
